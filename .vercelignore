@@ -1,0 +1,7 @@
+# 웹사이트에는 앱 화면(index.html)만 올림 — PC 실행기 파일은 GitHub에서만 받음
+*.ps1
+*.bat
+.env
+.env.*
+node_modules
+.gitignore
