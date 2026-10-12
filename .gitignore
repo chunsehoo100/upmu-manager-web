@@ -10,3 +10,6 @@ node_modules/
 # 개인 업무 자료(저장 폴더를 여기로 지정해도 올라가지 않게)
 *.json
 backup/
+
+.vercel
+.env*
