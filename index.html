@@ -898,7 +898,7 @@ table.ms-table{min-width:0;width:auto;border-collapse:collapse;font-size:12.5px;
 
         <!-- 폴더 미지정 -->
         <section id="gate" class="center" hidden>
-          <div class="mark">✻</div>
+          <div class="mark">📁</div>
           <h2>저장 폴더를 지정하세요</h2>
           <p>내역마다 지정한 폴더에 <b>내역이름.json</b> 파일로 따로 자동 저장되고, 하루 한 번 <b>backup</b> 폴더에 사본이 남습니다.</p>
           <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
@@ -909,7 +909,7 @@ table.ms-table{min-width:0;width:auto;border-collapse:collapse;font-size:12.5px;
 
         <!-- 장부 없음 -->
         <section id="emptyView" class="center" hidden>
-          <div class="mark">✻</div>
+          <div class="mark">📒</div>
           <h2>새 내역을 만들어 시작하세요</h2>
           <p>연도별·부서별·사업별로 내역을 나눠 관리할 수 있습니다. 왼쪽 목록에서 언제든 내역을 바꿀 수 있어요.</p>
           <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
@@ -2303,7 +2303,7 @@ function setMenu(id){
   if(sc) sc.scrollTop = 0;
 }
 $('railMenus').addEventListener('click', e=>{ const b = e.target.closest('[data-menu]'); if(b) setMenu(b.dataset.menu); });
-const gateHtml = () => `<div class="center"><div class="mark">✻</div><h2>저장 폴더를 지정하세요</h2>
+const gateHtml = () => `<div class="center"><div class="mark">📁</div><h2>저장 폴더를 지정하세요</h2>
   <p>집행내역과 일정은 지정한 폴더에 저장됩니다.</p>
   <button class="btn primary" data-pick>저장 폴더 연결</button></div>`;
 const ymd = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
@@ -2325,7 +2325,7 @@ function renderHome(){
       <div class="hf-sub">저장 폴더 연결됨 · 내역 ${db.ledgers.length}개 · 일정 ${sched.events.length}건</div></div>
       <div class="hf-actions"><button class="btn" data-rescan title="폴더에 직접 넣은 내역 파일을 다시 읽어옵니다">↻ 다시 읽기</button><button class="btn" data-pickfolder>폴더 변경</button></div></div>`;
   }else{
-    folder = `<div class="home-folder"><div class="hf-icon">✻</div>
+    folder = `<div class="home-folder"><div class="hf-icon">📁</div>
       <div class="hf-main"><div class="hf-title">저장 폴더를 지정하세요</div>
       <div class="hf-sub">내역은 <b>내역이름.json</b>, 일정은 <b>${SCHED_FILE}</b>, 메모는 <b>${MEMO_FILE}</b> 파일로 이 폴더에 자동 저장되고, 하루 한 번 <b>backup</b> 폴더에 사본이 남습니다.</div></div>
       <div class="hf-actions">${prevDirName?`<button class="btn" data-reconnect>"${esc(prevDirName)}" 다시 연결</button>`:''}<button class="btn primary" data-pickfolder>저장 폴더 선택</button></div></div>`;
